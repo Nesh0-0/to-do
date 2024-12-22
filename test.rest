@@ -1,0 +1,36 @@
+### GET
+GET http://localhost:5000
+
+### POST Register a new user
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{ "username": "test1@gmail.com", "password": "1234567" }
+
+### POST Login a user POST
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{ "username": "test1@gmail.com", "password": "1234567" }
+
+### GET all todos(protected)
+GET http://localhost:5000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM0ODY4MzQzLCJleHAiOjE3MzQ5NTQ3NDN9.9dLiVsI5bX0Cgaa-Yk5Urf6QhAtimuFYfKDlkNgZECM
+
+### POST Creates a new todo(protected)
+POST http://localhost:5000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzM0ODY3OTkwLCJleHAiOjE3MzQ5NTQzOTB9.eUvGJW0VK6qJm0y2VLEMVGlmO-K9cjv06chpytUkk0A
+Content-Type: application/json
+
+{ "task": "Buy milk"}
+
+### PUT Updates a todo(protected)
+PUT http://localhost:5000/todos/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM0ODY1Mzc5LCJleHAiOjE3MzQ5NTE3Nzl9.F-evWl6D_rUYg1L-g_aGgProWo4OH46EyOimFri3boE
+Content-Type: application/json
+
+{"completed": 1}
+
+### DELETE Deletes a todo(protected)
+DELETE http://localhost:5000/todos/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM0ODY4MzQzLCJleHAiOjE3MzQ5NTQ3NDN9.9dLiVsI5bX0Cgaa-Yk5Urf6QhAtimuFYfKDlkNgZECM
